@@ -25,10 +25,10 @@ public class PaymentAppMain {
         System.out.println("2. Login");
         System.out.print("Enter choice: ");
 
-        int userChoice = sc.nextInt();
+        int choice = sc.nextInt();
         sc.nextLine(); 
 
-        if (userChoice == 1) {
+        if (choice == 1) {
             System.out.println("Enter username:");
             String username = sc.nextLine();
 
@@ -54,19 +54,8 @@ public class PaymentAppMain {
             actions.registerUser(currentUser);
             System.out.println("You are registered successfully");
 
-            System.out.println("Login:");
-
-            System.out.println("Enter username:");
-            String loginUsername = sc.nextLine();
-
-            System.out.println("Enter your password");
-            String loginPassword = sc.nextLine();
-
-            actions.loginUser(currentUser);
-            System.out.println("Login successful! Welcome, " + currentUser.getUserName());
-            userOperations(sc);
             } 
-            else if (userChoice == 2) {
+            else if (choice == 2) {
               System.out.println("Enter username:");
               String username = sc.nextLine();
 
