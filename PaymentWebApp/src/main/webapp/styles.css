@@ -1,0 +1,104 @@
+@charset "UTF-8"; 
+ body{
+    background-color: #F9F7F0 !important; /* Forcefully apply the background color */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-seri
+ 	
+ }
+ #header{
+    background-color: MediumSeaGreen;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column; 
+ }
+ 
+ #form{
+ 	color:#E27D60;
+ 	border: 1px solid black;
+	padding: 5% ;
+	margin-top:2%;
+	margin-left:15%;
+	margin-right:15%;
+	margin-bottom:2%;
+	background-color: #A8D8B9;
+ }
+ #block{
+ 	color:#E27D60;
+	border: 1px solid black;
+	padding: 2%;
+	padding-left: 5%;
+	margin-top:1%;
+	margin-left:15%;
+	margin-right:15%;
+	margin-bottom:1%;
+	background-color: #A8D8B9;
+ }
+  .form-group {
+        margin-bottom: 15px; /* Adds space between each form group */
+ }
+ label {
+ 	color: #004000;
+     display: block; /* Makes the label appear above the input */
+     margin-bottom: 5px; /* Adds space between the label and input */
+ }
+ .form-control {
+     width: 100%; /* Makes the input fields take up the full width */
+     padding: 8px; /* Adds padding inside the input fields */
+     box-sizing: border-box; /* Ensures padding doesn't affect the width */
+ }
+ .logout {
+	background-color: red;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+ }
+.logout:hover {
+    background-color: #800000;
+ }
+ #welcomeUser{
+ 	 flex-grow: 1; /* Allow this element to grow and take available space */
+     text-align: left;
+ }       
+ #logoutButton{
+ 	  margin-left: auto;
+ }
+ #userSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it takes full width */
+}
+ .sendMoney{
+	background-color: #E27D60;
+	color: white;
+	padding: 50px 30px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 26px;
+ }
+ .sendMoney:hover{
+ 	background-color: #800000;
+ }
+ #sendMoneyButton{
+ 	margin-left: auto;
+ }
+ .statement {
+ 	background-color: #E27D60;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+ 	
+ }
+ .statement:hover{
+  	background-color: #800000;
+ }
