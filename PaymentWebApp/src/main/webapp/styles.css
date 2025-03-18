@@ -45,7 +45,7 @@
      margin-bottom: 5px; /* Adds space between the label and input */
  }
  .form-control {
-     width: 100%; /* Makes the input fields take up the full width */
+/*      width: 100%; Makes the input fields take up the full width */
      padding: 8px; /* Adds padding inside the input fields */
      box-sizing: border-box; /* Ensures padding doesn't affect the width */
  }
@@ -101,4 +101,23 @@
  }
  .statement:hover{
   	background-color: #800000;
+ }
+/* Hide inputs by default */
+ .field-group input[type="text"] {
+     background-color: #f0f0f0;
+     pointer-events: none; /* Prevents interaction */
+     margin-bottom: 15px;
+ }
+
+ /* Enable input when corresponding radio is checked */
+ input[type="radio"]:checked + span + input[type="text"] {
+     background-color: #fff;
+     pointer-events: auto;
+ }
+
+ /* Hide the other input when one radio is checked */
+ #bank-radio:not(:checked) ~ #bank-account,
+ #wallet-radio:not(:checked) ~ #wallet-account {
+     background-color: #f0f0f0;
+     pointer-events: none;
  }
