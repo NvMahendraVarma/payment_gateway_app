@@ -16,7 +16,7 @@
  }
  
  #form{
- 	color:#E27D60;
+ 	color:#0080c0;
  	border: 1px solid black;
 	padding: 5% ;
 	margin-top:2%;
@@ -74,7 +74,7 @@
     width: 100%; /* Ensure it takes full width */
 }
  .sendMoney{
-	background-color: #E27D60;
+	background-color: #0080c0;
 	color: white;
 	padding: 50px 30px;
 	border: none;
@@ -89,7 +89,7 @@
  	margin-left: auto;
  }
  .statement {
- 	background-color: #E27D60;
+ 	background-color: #0080ff;
 	color: white;
 	padding: 10px 20px;
 	border: none;
