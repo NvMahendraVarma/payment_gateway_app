@@ -9,21 +9,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
-	<div id='header'>
-		<div>
-			<h1>Payment Web Application</h1>
-		</div>
-		<div id= 'userSection'>
-			<div id='welcomeUser'>
-				<h3>Welcome username</h3>
-			</div>
-			<div id='logoutButton'>
-				<button class="logout">Log Out</button>
-			</div>
-		</div>
-	</div>
+	<%@ include file="header.jsp" %>	
 	<div id='block'>
 		<div id='userSection'>
 		    <div>
@@ -32,7 +21,9 @@
 				<h4>Wallet balance</h4>
 			</div>
 			<div id='sendMoneyButton'>
-				<button class="sendMoney">Send Money</button>
+				<a href="sendMoney.jsp">
+					<button class="sendMoney">Send Money</button>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -51,7 +42,9 @@
 				</tr>
 			</table>
 			<div id='sendMoneyButton'>
-				<button class="sendMoney">Add BankAccount</button>
+				<a href="addBankAccount.jsp">
+					<button  class="sendMoney">Add BankAccount</button>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -62,13 +55,14 @@
 				<h4>Recent 10 transactions</h4>
 			</div>
 			<div id='sendMoneyButton'>
-				<button class="statement">Detailed Statement</button>
+				<a href="statement.jsp">
+					<button class="statement">Detailed Statement</button>
+				</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
 
 
 
