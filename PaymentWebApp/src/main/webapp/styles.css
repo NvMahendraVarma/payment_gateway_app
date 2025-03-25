@@ -1,122 +1,188 @@
-@charset "UTF-8"; 
- body{
-    background-color: #F9F7F0 !important; /* Forcefully apply the background color */
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-seri
- 	
- }
- #header{
-    background-color: #0080c0;
-    text-align: center;
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    
+}
+
+/* Header Styles */
+.header {
+    background-color: #28a745;
+    color: white;
     padding: 20px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    flex-direction: column; 
- }
- 
- #form{
- 	color:#0080c0;
- 	border: 1px solid black;
-	padding: 5% ;
-	margin-top:2%;
-	margin-left:15%;
-	margin-right:15%;
-	margin-bottom:2%;
-	background-color: lightblue;
- }
- #block{
-	border: 1px solid black;
-	padding: 2%;
-	padding-left: 5%;
-	margin-top:1%;
-	margin-left:15%;
-	margin-right:15%;
-	margin-bottom:1%;
-	background-color: lightblue;
- }
-  .form-group {
-        margin-bottom: 15px; /* Adds space between each form group */
- }
- label {
- 	color: #004000;
-     display: block; /* Makes the label appear above the input */
-     margin-bottom: 5px; /* Adds space between the label and input */
- }
- .form-control {
-/*      width: 100%; Makes the input fields take up the full width */
-     padding: 8px; /* Adds padding inside the input fields */
-     box-sizing: border-box; /* Ensures padding doesn't affect the width */
- }
- .logout {
-	background-color: red;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
- }
-.logout:hover {
-    background-color: #800000;
- }
- #welcomeUser{
- 	 flex-grow: 1; /* Allow this element to grow and take available space */
-     text-align: left;
- }       
- #logoutButton{
- 	  margin-left: auto;
- }
- #userSection {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Form Container Styles */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.form-container h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form Group Styles */
+.form-group label {
+    color: #495057;
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #28a745;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Radio Button and Checkbox Styles */
+.form-check {
+    margin-bottom: 15px;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
+
+/* Remove Spinners from Number Inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+/* Additional Styles for Specific Pages */
+#block {
+    color: #E27D60;
+    border: 1px solid black;
+    padding: 2%;
+    padding-left: 5%;
+    margin-top: 1%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 1%;
+    background-color: #A8D8B9;
+}
+
+#form {
+    color: #E27D60;
+    border: 1px solid black;
+    padding: 5%;
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 2%;
+    background-color: #A8D8B9;
+}
+
+#userSection {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Ensure it takes full width */
+    width: 100%;
 }
- .sendMoney{
-	background-color: #0080c0;
-	color: white;
-	padding: 50px 30px;
-	border: none;
-	border-radius: 10px;
-	cursor: pointer;
-	font-size: 26px;
- }
- .sendMoney:hover{
- 	background-color: #800000;
- }
- #sendMoneyButton{
- 	margin-left: auto;
- }
- .statement {
- 	background-color: #0080ff;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	font-size: 16px;
- 	
- }
- .statement:hover{
-  	background-color: #800000;
- }
-/* Hide inputs by default */
- .field-group input[type="text"] {
-     background-color: #f0f0f0;
-     pointer-events: none; /* Prevents interaction */
-     margin-bottom: 15px;
- }
 
- /* Enable input when corresponding radio is checked */
- input[type="radio"]:checked + span + input[type="text"] {
-     background-color: #fff;
-     pointer-events: auto;
- }
+#welcomeUser {
+    flex-grow: 1;
+    text-align: left;
+}
 
- /* Hide the other input when one radio is checked */
- #bank-radio:not(:checked) ~ #bank-account,
- #wallet-radio:not(:checked) ~ #wallet-account {
-     background-color: #f0f0f0;
-     pointer-events: none;
- }
+#logoutButton {
+    margin-left: auto;
+}
+
+.logout {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout:hover {
+    background-color: #800000;
+}
+
+.sendMoney {
+    background-color: #E27D60;
+    color: white;
+    padding: 50px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.sendMoney:hover {
+    background-color: #800000;
+}
+
+.statement {
+    background-color: #E27D60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.statement:hover {
+    background-color: #800000;
+}
+
+/* Hide Inputs by Default */
+.field-group input[type="text"] {
+    background-color: #f0f0f0;
+    pointer-events: none; /* Prevents interaction */
+    margin-bottom: 15px;
+}
+
+/* Enable Input When Corresponding Radio is Checked */
+input[type="radio"]:checked + span + input[type="text"] {
+    background-color: #fff;
+    pointer-events: auto;
+}
+
+/* Hide the Other Input When One Radio is Checked */
+#bank-radio:not(:checked) ~ #bank-account,
+#wallet-radio:not(:checked) ~ #wallet-account {
+    background-color: #f0f0f0;
+    pointer-events: none;
+}
