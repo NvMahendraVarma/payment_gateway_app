@@ -1,4 +1,7 @@
-package com.paymentwebapp.servlets;
+package com.paymentwebapp.control;
+
+import com.paymentwebapp.dao.UserDAO;
+import com.paymentwebapp.dto.User;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,7 +17,9 @@ import java.sql.ResultSet;
 
 @WebServlet("/Welcome")
 public class Welcome extends HttpServlet {     
-
+	
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.sendRedirect("welcome.jsp");
 	}
@@ -26,8 +31,13 @@ public class Welcome extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-
-		boolean isValidUser = authenticateUser(username, password);
+		UserDAO paymentWebDAO = new UserDAO();
+		
+		User user = new User();
+		user.setUserName(username);
+		user.setPassword(password);
+		
+		boolean isValidUser = paymentWebDAO.authenticateUser(user);
 		
 		if (isValidUser) {
 	        response.sendRedirect("dashBoard.jsp");
@@ -40,35 +50,5 @@ public class Welcome extends HttpServlet {
 	}
 
 
-	private boolean authenticateUser(String username, String password) {
-		boolean isValid = false;
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con= DriverManager.
-					getConnection("jdbc:mysql://localhost:3306/payment_gateway_system","root","Varma@123");
-			
-			String query = "SELECT * FROM user_details WHERE user_name=? AND pass_word=? ";
-			PreparedStatement ps = con.prepareStatement(query);
-			ps.setString(1, username);
-			ps.setString(2, password);
-			ResultSet rs = ps.executeQuery();
-			
-			if(rs.next()) {
-				isValid = true;
-				System.out.println("isValid is true");
-			}
-			else {
-				System.out.println("isValid is false");
-			}
-			rs.close();
-			ps.close();
-			con.close(); 
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("err");
-		}
-		return isValid;
-	}
-
-}
+	
+} 
